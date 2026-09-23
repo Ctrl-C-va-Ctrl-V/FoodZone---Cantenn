@@ -1,0 +1,6 @@
+{
+  "name": "FOODZONE - Hệ Thống Căn Tin Thông Minh",
+  "description": "Hệ thống căng tin đa tác nhân: Đặt món & thanh toán QR cho học sinh, tiếp nhận & chế biến cho nhân viên, và báo cáo doanh thu cho quản lý.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
