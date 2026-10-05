@@ -58,7 +58,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCart }) => {
             <Clock className="w-3 h-3" /> 06:30 - 21:00
           </span>
           <span className="truncate hidden md:inline">
-            Căn tin Học Viện Phụ Nữ Việt Nam • Nấu nóng sốt mỗi ngày, giao nhanh chỉ 10 phút!
+            Căn tin ĐH Sư Phạm - Học Viện Phụ Nữ Việt Nam • Nấu nóng sốt mỗi ngày, giao nhanh chỉ 10 phút!
           </span>
           <div className="ml-auto flex items-center gap-2">
             <span className="inline-flex items-center gap-1 bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full border border-white/30">

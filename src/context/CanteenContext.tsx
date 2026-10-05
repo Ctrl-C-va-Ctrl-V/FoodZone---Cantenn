@@ -100,18 +100,7 @@ export const CanteenProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [dishes, setDishes] = useState<Dish[]>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.DISHES);
-      if (saved) {
-        const parsed: Dish[] = JSON.parse(saved);
-        // Merge any new dishes from INITIAL_DISHES that might not be in cached localStorage
-        const existingIds = new Set(parsed.map((d) => d.id));
-        const missing = INITIAL_DISHES.filter((d) => !existingIds.has(d.id));
-        if (missing.length > 0) {
-          const merged = [...parsed, ...missing];
-          localStorage.setItem(STORAGE_KEYS.DISHES, JSON.stringify(merged));
-          return merged;
-        }
-        return parsed;
-      }
+      if (saved) return JSON.parse(saved);
     } catch (e) {
       console.error(e);
     }
