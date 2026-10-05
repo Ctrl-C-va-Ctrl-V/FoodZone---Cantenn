@@ -147,13 +147,13 @@ export const MenuBrowsing: React.FC<MenuBrowsingProps> = ({ onOpenCart, filterOn
         </div>
 
         {/* Search bar */}
-        <div className="relative w-full md:w-80">
+        <div className="relative w-full md:w-72">
           <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Tìm bim bim, bánh bao, sữa tươi, mì trộn..."
+            placeholder="Tìm cơm sườn, mì trộn, trà sữa..."
             className="w-full pl-9 pr-4 py-2 bg-white rounded-xl border border-slate-200 text-xs sm:text-sm font-medium focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/10 transition"
           />
           {searchQuery && (
@@ -165,37 +165,6 @@ export const MenuBrowsing: React.FC<MenuBrowsingProps> = ({ onOpenCart, filterOn
             </button>
           )}
         </div>
-      </div>
-
-      {/* Quick Search Tag Chips */}
-      <div className="flex flex-wrap items-center gap-1.5 text-xs text-slate-500 -mt-4">
-        <span className="font-semibold text-slate-400">Gợi ý tìm nhanh:</span>
-        {[
-          { label: 'Bim bim giòn', query: 'bim bim' },
-          { label: 'Bánh bao nóng', query: 'bánh bao' },
-          { label: 'Sữa tươi', query: 'sữa' },
-          { label: 'Mì trộn Indomie', query: 'mì trộn' },
-          { label: 'Trà sữa', query: 'trà sữa' },
-        ].map((tag) => (
-          <button
-            key={tag.query}
-            onClick={() => {
-              setSelectedCategory('all');
-              setSearchQuery(tag.query);
-            }}
-            className="px-2.5 py-1 bg-white hover:bg-orange-50 hover:text-orange-600 hover:border-orange-200 border border-slate-200 rounded-lg text-slate-600 font-medium transition cursor-pointer shadow-2xs"
-          >
-            {tag.label}
-          </button>
-        ))}
-        {searchQuery && (
-          <button
-            onClick={() => setSearchQuery('')}
-            className="text-orange-600 underline font-semibold ml-1 cursor-pointer"
-          >
-            Xóa lọc
-          </button>
-        )}
       </div>
 
       {/* Dishes Grid */}

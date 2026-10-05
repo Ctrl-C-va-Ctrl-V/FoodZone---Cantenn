@@ -61,8 +61,8 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-xs text-slate-400">
               <li>📍 Ký túc xá A, B, C, D (Giao tận phòng: 5 - 10 phút)</li>
-              <li>📍 Khu giảng đường A2 (7 - 12 phút)</li>
-              <li>📍 Thư viện , khu tự học (8 - 15 phút)</li>
+              <li>📍 Khu giảng đường A2, B1, D3, D5 (7 - 12 phút)</li>
+              <li>📍 Thư viện Tạ Quang Bửu, khu tự học (8 - 15 phút)</li>
               <li>📍 Quầy phục vụ ăn tại chỗ Căn tin Trung tâm</li>
             </ul>
           </div>
@@ -75,7 +75,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs text-slate-400">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
-                <span>Nhà dịch vụ Căn tin A2, Học viện Phụ Nữ Việt Nam, Hà Nội</span>
+                <span>Nhà dịch vụ Căn tin A2, Học viện Phụ Nữ Việt Nam & ĐH Sư Phạm, Hà Nội</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-orange-500 shrink-0" />
@@ -91,7 +91,7 @@ export const Footer: React.FC = () => {
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            &copy; 2026 FOODZONE Canteen Management. Bản quyền thuộc về nhóm CTRC+CTRV.
+            &copy; 2026 FOODZONE Canteen Management. Bản quyền thuộc về Đội Ngũ Phát Triển Sinh Viên.
           </div>
           <div className="flex items-center gap-1 text-slate-400">
             <span>Phục vụ với</span> <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500 inline" /> <span>cho cộng đồng sinh viên</span>

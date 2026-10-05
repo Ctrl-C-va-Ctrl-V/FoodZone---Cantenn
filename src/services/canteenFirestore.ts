@@ -19,7 +19,7 @@ const COLLECTIONS = {
   SETTINGS: 'settings',
 };
 
-// Seed initial collections or sync missing dishes to Firestore
+// Seed initial collections if database is empty on first setup
 export async function initializeDatabaseSeed(): Promise<void> {
   try {
     const dishesSnap = await getDocs(collection(db, COLLECTIONS.DISHES));
@@ -28,22 +28,9 @@ export async function initializeDatabaseSeed(): Promise<void> {
       const batch = writeBatch(db);
       INITIAL_DISHES.forEach((dish: Dish) => {
         const dishRef = doc(db, COLLECTIONS.DISHES, dish.id);
-        batch.set(dishRef, sanitizeForFirestore(dish));
+        batch.set(dishRef, dish);
       });
       await batch.commit();
-    } else {
-      // If collection exists, ensure newly added standard dishes are also synced
-      const existingIds = new Set(dishesSnap.docs.map((d) => d.id));
-      const missingDishes = INITIAL_DISHES.filter((d) => !existingIds.has(d.id));
-      if (missingDishes.length > 0) {
-        console.log(`Syncing ${missingDishes.length} new dishes to Firestore...`);
-        const batch = writeBatch(db);
-        missingDishes.forEach((dish: Dish) => {
-          const dishRef = doc(db, COLLECTIONS.DISHES, dish.id);
-          batch.set(dishRef, sanitizeForFirestore(dish));
-        });
-        await batch.commit();
-      }
     }
 
     const ordersSnap = await getDocs(collection(db, COLLECTIONS.ORDERS));
